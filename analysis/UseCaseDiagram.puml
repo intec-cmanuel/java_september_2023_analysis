@@ -12,6 +12,7 @@ rectangle usecases {
 (return all animals) as getall
 (find an animal) as get
 (find all animals by name) as getname
+(get all animals sorted by name) as getsortname
 }
 
 user --> add
@@ -20,5 +21,6 @@ user --> sort
 user --> getall
 user --> get
 user --> getname
+user --> getsortname
 
 @enduml

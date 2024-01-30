@@ -3,15 +3,14 @@
 start
 
 :user provides sorting method by name or age;
+:system retrieves the animals;
 
 if (sorting by name) then (yes)
-    :system retrieves the animals;
     :system sorts the animals by name;
     stop;
 else (no, sort by age)
-        :system retrieves the animals;
-        :system sorts the animals by age;
-        stop;
+    :system sorts the animals by age;
+    stop;
 
 
 

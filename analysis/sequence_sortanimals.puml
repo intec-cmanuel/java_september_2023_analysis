@@ -2,6 +2,31 @@
 
 User -> AnimalShelterApp : inputs name or age
 AnimalShelterApp -> AnimalService : sortAnimalShelter(SortType: sortType)
+AnimalService -> AnimalRepository : getAnimals()
+AnimalService <-- AnimalRepository : List<Animal>
+
+alt Sorting by name
+AnimalService -> AnimalService : sortAnimalsByName(List<Animal>)
+
+else Sorting by age
+AnimalService -> AnimalService : sortAnimalsByAge(List<Animal>)
+
+end
+
+AnimalShelterApp <-- AnimalService : void
+User <-- AnimalShelterApp : OK message
+
+@enduml
+
+@startuml
+
+User -> AnimalShelterApp : inputs name or age
+AnimalShelterApp -> AnimalService : sortAnimalShelter(SortType: sortType)
+AnimalService -> AnimalRepository : getAnimals()
+AnimalService <-- AnimalRepository : List<Animal>
+AnimalService -> AnimalService : sortAnimalsByName(List<Animal>)
+AnimalShelterApp <-- AnimalService : void
+User <-- AnimalShelterApp : OK message
 
 
 @enduml
