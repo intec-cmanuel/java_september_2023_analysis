@@ -1,0 +1,20 @@
+@startuml
+
+User -> AnimalShelterApp : inputs name or age
+AnimalShelterApp -> AnimalService : sortAnimalShelter(SortType: sortType)
+
+
+@enduml
+
+@startuml
+user -> frontend
+frontend -> backend_controller
+backend_controller -> backend_service
+backend_service -> backend_repository
+backend_repository -> database
+backend_repository <- database
+backend_service <- backend_repository
+backend_controller <- backend_service
+frontend <- backend_controller
+user <- frontend
+@enduml
